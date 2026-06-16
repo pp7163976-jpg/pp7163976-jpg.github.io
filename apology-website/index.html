@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Message For You</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating Music Toggle Control -->
+  <button class="music-toggle playing" id="music-toggle" aria-label="Toggle background music">
+    <!-- Music Playing Icon -->
+    <svg viewBox="0 0 24 24" class="music-icon icon-playing">
+      <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+    </svg>
+    <!-- Music Muted Icon -->
+    <svg viewBox="0 0 24 24" class="music-icon icon-muted">
+      <path d="M4.27 3L3 4.27l9 9v.28c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4v-1.73l6 6L21 20l-9-9-7.73-7.73zm13.73 4h-4V3h6v4h-2z"/>
+    </svg>
+  </button>
+
+  <!-- Background Decorations Wrapper -->
+  <div class="bg-decorations" id="bg-decorations">
+    <!-- Lotus Background Image Overlay for Page 1 -->
+    <div class="lotus-bg-overlay" id="lotus-bg-overlay"></div>
+    
+    <!-- Moon Background Overlay for Page 2 -->
+    <div class="moon-bg-overlay" id="moon-bg-overlay">
+      <div class="star-cluster">
+        <div class="tiny-star" style="top: 20%; left: 30%; animation-delay: 0s;"></div>
+        <div class="tiny-star" style="top: 15%; left: 70%; animation-delay: 1s;"></div>
+        <div class="tiny-star" style="top: 40%; left: 15%; animation-delay: 2s;"></div>
+        <div class="tiny-star" style="top: 35%; left: 85%; animation-delay: 0.5s;"></div>
+        <div class="tiny-star" style="top: 60%; left: 75%; animation-delay: 1.5s;"></div>
+      </div>
+    </div>
+    
+    <!-- Kintsugi Background Overlay for Pages 3-4 (Beauty in Imperfection) -->
+    <div class="kintsugi-bg-overlay" id="kintsugi-bg-overlay">
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="kintsugi-seams">
+        <path d="M 0 35 Q 25 30 40 45 T 75 60 T 100 55" stroke="#ffd166" stroke-width="0.3" fill="none" opacity="0.65" />
+        <path d="M 40 45 Q 45 15 65 10" stroke="#ffd166" stroke-width="0.25" fill="none" opacity="0.55" />
+        <path d="M 25 30 Q 20 65 5 90" stroke="#ffd166" stroke-width="0.2" fill="none" opacity="0.5" />
+        <path d="M 75 60 Q 80 85 95 95" stroke="#ffd166" stroke-width="0.2" fill="none" opacity="0.5" />
+      </svg>
+    </div>
+  </div>
+
+  <!-- SPA Card Container -->
+  <div class="app-container">
+    
+    <!-- PAGE 1: The Memory -->
+    <div class="card active" id="card-1">
+      <div class="card-header">
+        <div class="card-subtitle" contenteditable="true" spellcheck="false" placeholder="Chapter Subtitle">Chapter I</div>
+        <h1 class="card-title" contenteditable="true" spellcheck="false" placeholder="Chapter Title" id="title-1">To someone special<br>(yes its you Kashish)</h1>
+      </div>
+      <div class="card-body">
+        <div class="static-card-content" contenteditable="true" spellcheck="false" placeholder="Write a memory here..." id="text-1">I dont know from where I should start,there a lot in my mind from a while so I made this website only for you.I know I made mistakes ,directly or indirectly my words hurt you, I am bad at expressing myself with words but  with actions lets see.</div>
+      </div>
+      <div class="btn-container">
+        <button class="btn-primary" id="btn-text-1" onclick="nextPage(1)">Next Page</button>
+      </div>
+    </div>
+
+    <!-- PAGE 2: The Reflection -->
+    <div class="card" id="card-2">
+      <div class="card-header">
+        <div class="card-subtitle" contenteditable="true" spellcheck="false" placeholder="Chapter Subtitle">Chapter II</div>
+        <h1 class="card-title" contenteditable="true" spellcheck="false" placeholder="Chapter Title" id="title-2">A Moment of Reflection</h1>
+      </div>
+      <div class="card-body">
+        <div class="static-card-content" contenteditable="true" spellcheck="false" placeholder="Write your thoughts here..." id="text-2">When you take picture of moon,you never say the moon is ugly .You just say the camera coundent capture how beautiful it really is.Now imagine the Moon is You. Whenever you doubt yourself remember,its never you that lacking, people can't capture your true beauty.</div>
+      </div>
+      <div class="btn-container">
+        <button class="btn-secondary" onclick="prevPage(2)">Previous Page</button>
+        <button class="btn-primary" id="btn-text-2" onclick="nextPage(2)">Next Page</button>
+      </div>
+    </div>
+
+    <!-- PAGE 3: The Apology Details -->
+    <div class="card" id="card-3">
+      <div class="card-header">
+        <div class="card-subtitle" contenteditable="true" spellcheck="false" placeholder="Chapter Subtitle">Chapter III</div>
+        <h1 class="card-title" contenteditable="true" spellcheck="false" placeholder="Chapter Title" id="title-3">My Sincere Apology</h1>
+      </div>
+      <div class="card-body">
+        <div class="static-card-content" contenteditable="true" spellcheck="false" placeholder="Write your apology here..." id="text-3">I want to take responsibility for my actions. It was never my intention to make you feel this way.What I really think is you deserve every joy and happiness in the world because you are geniunly a good person.You are gorgious anyone with a good heart and eyes can see that but that's the least intreasting about you according to me.You dont have to go like I have a thought or anything you can direct say to me that I am crossing my limits that I should stop.Again sorry for souding like a creep amd making you unconfortable and I will make shore this wont't happen again.</div>
+      </div>
+      <div class="btn-container">
+        <button class="btn-secondary" onclick="prevPage(3)">Previous Page</button>
+        <button class="btn-primary" id="btn-text-3" onclick="nextPage(3)">Next Page</button>
+      </div>
+    </div>
+
+    <!-- PAGE 4: The Interactive Forgiveness -->
+    <div class="card" id="card-4">
+      <div class="card-header">
+        <div class="card-subtitle" contenteditable="true" spellcheck="false" placeholder="Chapter Subtitle">Chapter IV</div>
+        <h1 class="card-title" contenteditable="true" spellcheck="false" placeholder="Chapter Title" id="title-4">Asking for Forgiveness</h1>
+      </div>
+      <div class="card-body">
+        <div class="apology-wrapper">
+          <div class="apology-illustration">
+            <svg viewBox="0 0 24 24" class="apology-svg-icon">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              <path d="M12 4 Q 11.5 8 13.5 11.5 T 11.5 17.5" class="apology-svg-crack"/>
+            </svg>
+          </div>
+          <div class="apology-text" contenteditable="true" spellcheck="false" placeholder="Write your apology..." id="text-4">Please forgive me...</div>
+          <div class="btn-choice-container" id="choice-container">
+            <button class="btn-choice btn-yes" contenteditable="true" spellcheck="false" placeholder="Yes label" id="btn-yes" onclick="handleYesClick(event)">Yes</button>
+            <button class="btn-choice btn-no" contenteditable="true" spellcheck="false" placeholder="No label" id="btn-no">No</button>
+          </div>
+        </div>
+      </div>
+      <div class="btn-container">
+        <button class="btn-secondary" onclick="prevPage(4)">Previous Page</button>
+      </div>
+    </div>
+
+    <!-- PAGE 5: The Thank You -->
+    <div class="card" id="card-5">
+      <div class="card-header">
+        <div class="card-subtitle" contenteditable="true" spellcheck="false" placeholder="Chapter Subtitle">Chapter V</div>
+        <h1 class="card-title" contenteditable="true" spellcheck="false" placeholder="Chapter Title">Thank You</h1>
+      </div>
+      <div class="card-body">
+        <div class="thankyou-heart-container">
+          <svg viewBox="0 0 24 24" class="thankyou-heart-svg">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+        </div>
+        <p style="text-align: center; margin-bottom: 20px; font-weight: 600; font-size: 1.1rem; color: #5a323c;" contenteditable="true" spellcheck="false" placeholder="Closing statement...">
+          Thank you for your beautiful heart.
+        </p>
+        
+        <!-- Interactive Scrapbook of customized memories -->
+        <div class="scrapbook">
+          <div class="scrapbook-item">
+            <div class="scrapbook-title" contenteditable="true" spellcheck="false" placeholder="Scrapbook Header">A Cherished Memory</div>
+            <span id="scrapbook-text-1">"..."</span>
+          </div>
+          <div class="scrapbook-item">
+            <div class="scrapbook-title" contenteditable="true" spellcheck="false" placeholder="Scrapbook Header">My Promise to You</div>
+            <span id="scrapbook-text-2">"..."</span>
+          </div>
+        </div>
+      </div>
+      <div class="btn-container" style="margin-top: 10px;">
+        <button class="btn-secondary" onclick="prevPage(5)">Previous Page</button>
+      </div>
+      <div style="margin-top: 15px; font-size: 0.8rem; opacity: 0.6; text-align: center;" contenteditable="true" spellcheck="false" placeholder="Signature">
+        Forever yours.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Particle container for yes click -->
+  <div class="particle-container" id="particle-container"></div>
+
+  <!-- Background Music Audio element -->
+  <audio id="bg-music" loop>
+    <source src="https://incompetech.com/music/royalty-free/mp3-royaltyfree/Gymnopedie%20No%201.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
